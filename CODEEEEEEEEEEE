@@ -1,0 +1,323 @@
+flute_whistle = "C:/Users/Aston Turney/Downloads/fluteredlight.wav"
+bass_heavy = "C:/Users/Aston Turney/Downloads/basslight.wav"
+lyricsred = "C:/Users/Aston Turney/Downloads/BabyRedlightlyrics.wav"
+lyricsbop = "C:/Users/Aston Turney/Downloads/babyboplyrics.wav"
+jetson = "C:/Users/Aston Turney/Downloads/jetson.wav"
+n95lyrics = "C:/Users/Aston Turney/Downloads/KendrickLyricsN95.wav"
+n95beat = "C:/Users/Aston Turney/Downloads/N95Drums_Bassssss.wav"
+transition = "C:/Users/Aston Turney/Downloads/transitionnN.wav"
+
+p1 = [:G4,:E4,:A4,:E4,:G4,:C4,:Fs4,:D4, :G4,:E4,:A4,:E4,:G4,:C4,:Fs4,:D4,:G4,:E4,:A4,:E4,:G4,:C4,:Fs4,:D4]
+x = 21.875
+a = 0
+b = 2.6
+c = 1.78
+d = 0.3
+r = 1.6
+j = 2.33
+z = 1.6
+f = 0.37
+t = 1.1
+m7 = 0.31
+j2 = 0
+
+
+define :flupiano do |a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t|
+  play a, amp: 1.7
+  sleep 0.75
+  play b, amp: 1.7
+  sleep 0.25
+  play c, amp: 1.7
+  sleep 0.25
+  play d, amp: 1.7
+  sleep 0.75
+  play e, amp: 1.7
+  sleep 1.25
+  play f, amp: 1.7
+  sleep 0.5
+  play g, amp: 1.7
+  sleep 0.5
+  play h, amp: 1.7
+  sleep 0.5
+  play i, amp: 1.7
+  sleep 0.5
+  play j, amp: 1.7
+  sleep 0.5
+  play k, amp: 1.7
+  sleep 0.75
+  play l, amp: 1.7
+  sleep 0.25
+  play m, amp: 1.7
+  sleep 0.25
+  play n, amp: 1.7
+  sleep 0.75
+  play o, amp: 1.7
+  sleep 1.25
+  play p, amp: 1.7
+  sleep 0.25
+  play q, amp: 1.7
+  sleep 0.3
+  play r, amp: 1.7
+  sleep 0.25
+  play s, amp: 1.7
+  sleep 0.25
+  play t, amp: 1.7
+  sleep 0.5
+end
+
+define :familyties do |a2,b2,c2,d2,e2,f2,g2,h2,i2|
+  play a2, amp: z, release: f
+  sleep 0.5
+  play b2, amp: z, release: f
+  sleep 0.5
+  play c2, amp: z, release: t
+  sleep 2
+  play d2, amp: z, release: f
+  sleep 0.5
+  play e2, amp: z, release: f
+  sleep 0.5
+  play f2, amp: z, release: t
+  sleep 2
+  play g2, amp: z, release: f
+  sleep 0.5
+  play h2, amp: z, release: f
+  sleep 0.5
+  play i2, amp: z, release: f
+  sleep 1
+end
+
+define :familytieslow do |a3,b3,c3,d3,e3,f3,g3,h3,i3,a4,b4,c4,d4,e4,f4,g4,h4,i4|
+  play a3, amp: z, release: m7, sustain: j2, attack: 0.3
+  play b3, amp: z, release: m7, sustain: j2, attack: 0.3
+  sleep 0.5
+  play c3, amp: z, release: m7, sustain: j2, attack: 0.3
+  sleep 0.5
+  play d3, amp: z, release: m7, sustain: j2, attack: 0.3
+  play e3, amp: z, release: m7, sustain: j2, attack: 0.3
+  sleep 1
+  play f3, amp: z, release: m7, sustain: j2, attack: 0.3
+  play g3, amp: z, release: m7, sustain: j2, attack: 0.3
+  sleep 1
+  play h3, amp: z, release: m7, sustain: j2, attack: 0.3
+  sleep 0.5
+  play i3, amp: z, release: m7, sustain: j2, attack: 0.3
+  play a4, amp: z, release: m7, sustain: j2, attack: 0.3
+  sleep 0.5
+  play b4, amp: z, release: m7, sustain: j2, attack: 0.3
+  play c4, amp: z, release: m7, sustain: j2, attack: 0.3
+  sleep 1
+  play d4, amp: z, release: m7, sustain: j2, attack: 0.3
+  play e4, amp: z, release: m7, sustain: j2, attack: 0.3
+  sleep 1
+  play f4, amp: z, release: m7, sustain: j2, attack: 0.3
+  play g4, amp: z, release: m7, sustain: j2, attack: 0.3
+  sleep 1.5
+  play h4, amp: z, release: m7, sustain: j2, attack: 0.3
+  play i4, amp: z, release: m7, sustain: j2, attack: 0.3
+  sleep 0.5
+end
+
+live_loop :flutepiano do
+  use_bpm 165
+  1. times do
+    with_synth :hollow do
+      with_fx :reverb do
+        with_fx :level do
+          flupiano :g4, :a4, :g4, :f4, :e4, :d4, :e4, :f4, :g4, :a4, :g4, :a4, :g4, :f4,:e4, :d5, :a4, :b4, :g4, :a4
+          
+          play :G4, amp: 1.7
+          sleep 0.75
+          play :A4, amp: 1.7
+          sleep 0.25
+          play :G4, amp: 1.7
+          sleep 0.25
+          play :F4, amp: 1.7
+          sleep 0.75
+          play :E4, amp: 1.7
+          sleep 1.25
+          play :d4, amp: 1.7
+          sleep 0.5
+          play :e4, amp: 1.7
+          sleep 0.5
+          play :f4, amp: 1.7
+          sleep 0.5
+          play :g4, amp: 1.7
+          sleep 0.5
+          play :a4, amp: 1.7
+          sleep 0.5
+          play :b4, amp: 1.7
+          sleep 1
+          play :G4, release: 0.56, amp: 1.7
+          sleep 0.75
+          play :e4, release: 1.7, amp: 1.7
+          sleep 0.75
+          play :f4, amp: 1.7
+          sleep 0.2
+          play :g4, amp: 1.7
+          sleep 0.2
+          play :f4, amp: 1.7
+          sleep 0.2
+          play :g4, amp: 1.7
+          sleep 0.2
+          play :f4, amp: 1.7
+          sleep 0.2
+          play :g4, amp: 1.7
+          sleep 0.2
+          play :f4, amp: 1.7
+          sleep 0.2
+          play :g4, slide: 1.4, release: 1.81, amp: 1.7
+          sleep 1.6
+          
+        end
+      end
+    end
+  end
+  stop
+end
+
+live_loop :flute do
+  3. times do
+    use_bpm 165
+    with_synth :hollow do
+      with_fx :reverb do
+        with_fx :level do
+          
+          sample flute_whistle
+          sleep x
+          
+        end
+      end
+    end
+  end
+  stop
+end
+
+sleep 8
+
+use_bpm 165
+live_loop :bass do
+  2. times do
+    with_fx :reverb do
+      sample bass_heavy, amp: b
+      sleep x
+    end
+  end
+  stop
+end
+
+sleep 0.6
+
+with_fx :reverb do
+  live_loop :lyr do
+    2. times do
+      sample lyricsred, amp: c
+      sleep x
+    end
+    stop
+  end
+end
+sleep 34.88
+
+sample jetson, amp: 2.2
+
+sleep 8.2555
+
+live_loop :main_theme do
+  with_fx :gverb do
+    24. times do
+      play (p1 [a]), amp: d
+      a = a + 1
+      sleep 2.75
+    end
+    stop
+  end
+  stop
+end
+
+live_loop :bop do
+  with_fx :reverb do
+    cc = chord(:G2,"minor")
+    3. times do
+      sample lyricsbop, amp: c
+      sleep 22.5
+    end
+    stop
+  end
+end
+
+sleep 5
+
+10. times do
+  b = b - 0.17
+  c = c - 0.17178
+  d = d - 0.03
+  sleep 1.289
+end
+
+if d == 0.01
+  stop main_theme
+end
+
+if c == 0.01
+  stop bop
+end
+
+if d == 0.01
+  stop decrease
+end
+
+if c == 0.01
+  stop decrease
+end
+
+sleep 0.01
+sample :perc_swoosh, beat_stretch: 14, amp: 0.4
+sleep 0.01
+
+sample :bass_trance_c, beat_stretch: 2, amp: 0.1
+sample :ambi_drone, beat_stretch: 6, amp: 0.2
+sample :bass_drop_c, beat_stretch: 4, amp: 0.1
+
+b = 0
+c = 0
+d = 0
+
+sleep 0.01
+
+sample transition, amp: 1.5
+
+sleep 12.4
+
+
+live_loop :n95lyr do
+  1. times do
+    sample n95lyrics, amp: r
+  end
+  stop
+end
+sleep 0.1955
+
+live_loop :n95b do
+  1. times do
+    sample n95beat, amp: j
+  end
+  stop
+end
+
+sleep 48
+
+
+live_loop :fth do
+  8. times do
+    use_bpm 160
+    use_synth :pluck
+    familyties :d5, :e5, :f5, :e5, :f5, :f5, :f5, :d5, :e5
+  end
+  end
+  
+  live_loop :ftl do
+    use_bpm 160
+    familytieslow :d3, :g3, :a2, :d3, :g3, :d3, :d2, :a2, :d3, :g3, :d3, :g3, :d3, :d2, :c3, :b1, :b2, :a1
+  end
+  
+  
