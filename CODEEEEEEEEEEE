@@ -8,7 +8,20 @@ n95beat = "C:/Users/Aston Turney/Downloads/N95Drums_Bassssss.wav"
 transition = "C:/Users/Aston Turney/Downloads/transitionnN.wav"
 
 p1 = [:G4,:E4,:A4,:E4,:G4,:C4,:Fs4,:D4, :G4,:E4,:A4,:E4,:G4,:C4,:Fs4,:D4,:G4,:E4,:A4,:E4,:G4,:C4,:Fs4,:D4]
-x = 21.875, a = 0, b = 2.6, c = 1.78, d = 0.3, r = 1.6, j = 2.33, z = 1.6, f = 0.37, t = 1.1, m7 = 0.31, j2 = 0
+x = 21.875
+a = 0
+b = 2.6
+c = 1.78
+d = 0.3
+r = 1.6
+j = 2.33
+z = 0.12
+f = 2.9
+t = 8.94
+m7 = 0.31
+j2 = 0
+l = 0.02
+
 
 define :flupiano do |a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t|
   play a, amp: 1.7
@@ -59,7 +72,7 @@ define :familyties do |a2,b2,c2,d2,e2,f2,g2,h2,i2|
   play b2, amp: z, release: f
   sleep 0.5
   play c2, amp: z, release: t
-  sleep 2
+  sleep 4
   play d2, amp: z, release: f
   sleep 0.5
   play e2, amp: z, release: f
@@ -71,41 +84,39 @@ define :familyties do |a2,b2,c2,d2,e2,f2,g2,h2,i2|
   play h2, amp: z, release: f
   sleep 0.5
   play i2, amp: z, release: f
-  sleep 1
+  sleep 1.5
 end
 
 define :familytieslow do |a3,b3,c3,d3,e3,f3,g3,h3,i3,a4,b4,c4,d4,e4,f4,g4,h4,i4|
-  play a3, amp: z, release: m7, sustain: j2, attack: 0.3
-  play b3, amp: z, release: m7, sustain: j2, attack: 0.3
+  play a3, amp: l, release: m7, sustain: j2, attack: 0.3
+  play b3, amp: l, release: m7, sustain: j2, attack: 0.3
   sleep 0.5
-  play c3, amp: z, release: m7, sustain: j2, attack: 0.3
+  play c3, amp: l, release: m7, sustain: j2, attack: 0.3
   sleep 0.5
-  play d3, amp: z, release: m7, sustain: j2, attack: 0.3
-  play e3, amp: z, release: m7, sustain: j2, attack: 0.3
+  play d3, amp: l, release: m7, sustain: j2, attack: 0.3
+  play e3, amp: l, release: m7, sustain: j2, attack: 0.3
   sleep 1
-  play f3, amp: z, release: m7, sustain: j2, attack: 0.3
-  play g3, amp: z, release: m7, sustain: j2, attack: 0.3
+  play f3, amp: l, release: m7, sustain: j2, attack: 0.3
+  play g3, amp: l, release: m7, sustain: j2, attack: 0.3
   sleep 1
-  play h3, amp: z, release: m7, sustain: j2, attack: 0.3
+  play h3, amp: l, release: m7, sustain: j2, attack: 0.3
   sleep 0.5
-  play i3, amp: z, release: m7, sustain: j2, attack: 0.3
-  play a4, amp: z, release: m7, sustain: j2, attack: 0.3
+  play i3, amp: l, release: m7, sustain: j2, attack: 0.3
+  play a4, amp: l, release: m7, sustain: j2, attack: 0.3
   sleep 0.5
-  play b4, amp: z, release: m7, sustain: j2, attack: 0.3
-  play c4, amp: z, release: m7, sustain: j2, attack: 0.3
+  play b4, amp: l, release: m7, sustain: j2, attack: 0.3
+  play c4, amp: l, release: m7, sustain: j2, attack: 0.3
   sleep 1
-  play d4, amp: z, release: m7, sustain: j2, attack: 0.3
-  play e4, amp: z, release: m7, sustain: j2, attack: 0.3
+  play d4, amp: l, release: m7, sustain: j2, attack: 0.3
+  play e4, amp: l, release: m7, sustain: j2, attack: 0.3
   sleep 1
-  play f4, amp: z, release: m7, sustain: j2, attack: 0.3
-  play g4, amp: z, release: m7, sustain: j2, attack: 0.3
+  play f4, amp: l, release: m7, sustain: j2, attack: 0.3
+  play g4, amp: l, release: m7, sustain: j2, attack: 0.3
   sleep 1.5
-  play h4, amp: z, release: m7, sustain: j2, attack: 0.3
-  play i4, amp: z, release: m7, sustain: j2, attack: 0.3
+  play h4, amp: l, release: m7, sustain: j2, attack: 0.3
+  play i4, amp: l, release: m7, sustain: j2, attack: 0.3
   sleep 0.5
 end
-
-#Song Output Starts Here
 
 live_loop :flutepiano do
   use_bpm 165
@@ -235,7 +246,7 @@ live_loop :bop do
   end
 end
 
-sleep 5
+sleep 0.7
 
 10. times do
   b = b - 0.17
@@ -260,8 +271,6 @@ if c == 0.01
   stop decrease
 end
 
-#Transition Segment is Here
-
 sleep 0.01
 sample :perc_swoosh, beat_stretch: 14, amp: 0.4
 sleep 0.01
@@ -280,7 +289,6 @@ sample transition, amp: 1.5
 
 sleep 12.4
 
-#Post Transition
 
 live_loop :n95lyr do
   1. times do
@@ -299,9 +307,10 @@ end
 
 sleep 48
 
+
 live_loop :fth do
   8. times do
-    use_bpm 160
+    use_bpm 100
     use_synth :pluck
     familyties :d5, :e5, :f5, :e5, :f5, :f5, :f5, :d5, :e5
   end
